@@ -1,8 +1,6 @@
 export default {
-  routeRules: {
-    "/examples/*": { redirect: "/redirect-route" },
-    "/modify-headers-route": { headers: { "x-magic-of": "nuxt and vercel" } },
-    "/spa": { ssr: false },
+  router: {
+    base: "/pokeAnalysis/",
   },
 
   generate: {
