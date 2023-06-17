@@ -5,6 +5,10 @@ export default {
     "/spa": { ssr: false },
   },
 
+  generate: {
+    dir: "docs",
+  },
+
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 

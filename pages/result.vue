@@ -16,7 +16,9 @@
     <p>{{ this.name }}です。</p>
     <div class="text-center"></div>
     <img :src="pokemonImage" />
+
     <br />
+
     <v-btn
       class="text-none ma-2"
       color="#1da1f2"
