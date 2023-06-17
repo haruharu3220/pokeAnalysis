@@ -21,9 +21,11 @@
         variant="flat"
         width="200"
         to="/questions"
+        @click="$store.commit('increment', 2)"
       >
         はい
       </v-btn>
+      {{ $store.state.point }}
       <v-btn
         class="text-none ma-2"
         color="yellow"
@@ -31,6 +33,7 @@
         variant="flat"
         width="200"
         to="/questions"
+        @click="$store.commit('increment', 1)"
       >
         いいえ
       </v-btn>
