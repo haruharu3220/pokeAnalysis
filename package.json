@@ -13,13 +13,14 @@
     "@nuxtjs/emotion": "^0.1.0",
     "core-js": "^3.25.3",
     "nuxt": "^2.15.8",
-    "vue": "^2.7.10",
+    "vue": "*",
     "vue-server-renderer": "^2.7.10",
-    "vue-template-compiler": "^2.7.10"
+    "vue-template-compiler": "^2.7.10",
+    "@nuxtjs/vuetify": "*"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.8",
     "@nuxt/typescript-build": "^2.1.0",
-    "@nuxtjs/vuetify": "^1.12.3"
+    "@nuxtjs/vuetify": "*"
   }
 }
