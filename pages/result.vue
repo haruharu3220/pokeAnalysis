@@ -16,6 +16,17 @@
     <p>{{ this.name }}です。</p>
     <div class="text-center"></div>
     <img :src="pokemonImage" />
+    <br />
+    <v-btn
+      class="text-none ma-2"
+      color="#1da1f2"
+      rounded
+      variant="flat"
+      width="200"
+      @click="twitterShare"
+    >
+      シェアする
+    </v-btn>
   </v-sheet>
 </template>
 <style>
@@ -46,7 +57,7 @@ export default {
         console.log(normalizedPoint);
         this.finalResultPoint = normalizedPoint;
         this.url = `https://pokeapi.co/api/v2/pokemon/${this.finalResultPoint}`;
-},
+    },
     async getPokemonImage(){
         const response = await fetch(this.url,options)
         .then(response => response.json());
@@ -69,6 +80,12 @@ export default {
         this.name = name;
         // this.pokemonImage = response;
     },
+    twitterShare(){
+        //シェアする画面を設定
+        var shareURL = 'https://twitter.com/intent/tweet?text=' + "ポケモン自己診断っぽいものを作ってみました。" + "診断結果はこちら"+'&url=' + this.pokemonImage ;
+        //シェア用の画面へ移行
+        location.href = shareURL
+        }
   },
   created() {
     this.normalizePoint();
