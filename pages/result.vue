@@ -10,6 +10,7 @@
 
     <p class="mb-4 text-medium-emphasis text-body-2">
       あなたをポケモンに例えると...
+      <!-- {{ $store.state.point }} -->
     </p>
     <v-divider class="mb-4"></v-divider>
     <p>{{ this.name }}です。</p>
@@ -41,7 +42,7 @@ export default {
   methods: {
     normalizePoint() {
         const point = this.$store.state.point; // $store.state.point を変数 point に代入
-        const normalizedPoint = Math.floor((point / 9) * 151) + 1;
+        const normalizedPoint = Math.floor((point / 9) * 150) + 1;
         console.log(normalizedPoint);
         this.finalResultPoint = normalizedPoint;
         this.url = `https://pokeapi.co/api/v2/pokemon/${this.finalResultPoint}`;

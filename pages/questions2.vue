@@ -25,7 +25,7 @@
       >
         はい
       </v-btn>
-      {{ $store.state.point }}
+      <!-- {{ $store.state.point }} -->
       <v-btn
         class="text-none ma-2"
         color="yellow"
