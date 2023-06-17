@@ -6,10 +6,10 @@
     width="100%"
     class="pa-4 text-center mx-auto mt-4"
   >
-    <h2 class="text-h5 mb-6">第1問</h2>
+    <h2 class="text-h5 mb-6">第2問</h2>
 
     <p class="mb-4 text-medium-emphasis text-body-2">
-      あなたは明るいと言われますか？
+      あなたは早起きが得意ですか？
     </p>
     <v-divider class="mb-4"></v-divider>
 
@@ -20,7 +20,7 @@
         rounded
         variant="flat"
         width="200"
-        to="/questions2"
+        to="/questions3"
         @click="$store.commit('increment', 3)"
       >
         はい
@@ -32,7 +32,7 @@
         rounded
         variant="flat"
         width="200"
-        to="/questions2"
+        to="/questions3"
         @click="$store.commit('increment', 0)"
       >
         いいえ
@@ -43,7 +43,7 @@
         rounded
         variant="flat"
         width="200"
-        to="/questions2"
+        to="/questions3"
         @click="$store.commit('increment', 2)"
       >
         どちらかといえばはい
@@ -54,7 +54,7 @@
         rounded
         variant="flat"
         width="200"
-        to="/questions2"
+        to="/questions3"
         @click="$store.commit('increment', 1)"
       >
         どちらかといえばいいえ
