@@ -14,9 +14,9 @@
     <!-- 罫線(不要なので外す)
         <v-divider class="mb-4"></v-divider> -->
 
-    <div class="text-center">
-      {{ $store.state.point }}
-    </div>
+    <div class="text-center"></div>
+    <button @click="getPokemonImage">画像を取得</button>
+    <img :src="pokemonImage" />
   </v-sheet>
 </template>
 <style>
@@ -26,16 +26,38 @@
 }
 </style>
 <script lang="js">
+const options = {
+    method: 'GET',
+}
 
 export default {
-  data () {
-    return {
-    }
+    data () {
+        return {
+            pokemonImage:'',
+            finalResultPoint: 1,
+            url:'',
+    };
   },
   methods: {
-    startAnalysis () {
+    normalizePoint() {
+        const point = this.$store.state.point; // $store.state.point を変数 point に代入
+        const normalizedPoint = Math.floor((point / 9) * 151) + 1;
+        console.log(normalizedPoint);
+        this.finalResultPoint = normalizedPoint;
+        this.url = `https://pokeapi.co/api/v2/pokemon/${this.finalResultPoint}`;
+},
+    async getPokemonImage(){
+        const response = await fetch(this.url,options)
+        .then(response => response.json());
+        console.log(response);
+        this.pokemonImage = response.sprites.front_default;
 
-    }
-  }
+        // this.pokemonImage = response;
+    },
+  },
+  created() {
+    this.normalizePoint();
+    this.getPokemonImage();
+  },
 }
 </script>
