@@ -21,3 +21,7 @@ $ npm run generate
 
 Vuetify を途中から入れる方法<br>
 https://zakkuri.life/nuxtvuetify/ <br>
+
+Vuetify 使うと margin や padding の調整がめっちゃ楽な件<br>
+https://qiita.com/00__/items/d5973c7dc79b95b08739 <br>
+tailwindCSS の書き方とは微妙に異なるので注意<br>
