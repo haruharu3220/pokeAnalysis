@@ -11,11 +11,9 @@
     <p class="mb-4 text-medium-emphasis text-body-2">
       あなたをポケモンに例えると...
     </p>
-    <!-- 罫線(不要なので外す)
-        <v-divider class="mb-4"></v-divider> -->
-
+    <v-divider class="mb-4"></v-divider>
+    <p>{{ this.name }}です。</p>
     <div class="text-center"></div>
-    <button @click="getPokemonImage">画像を取得</button>
     <img :src="pokemonImage" />
   </v-sheet>
 </template>
@@ -33,9 +31,11 @@ const options = {
 export default {
     data () {
         return {
+            name:'',
             pokemonImage:'',
             finalResultPoint: 1,
             url:'',
+
     };
   },
   methods: {
@@ -52,6 +52,20 @@ export default {
         console.log(response);
         this.pokemonImage = response.sprites.front_default;
 
+        // ポケモン種族情報取得.
+        const speciesUrl = response.species.url;
+        console.log(speciesUrl);
+        const responseSpecies = await fetch(speciesUrl,options)
+        .then(response => response.json());
+        console.log("★★★★★★");
+
+        console.log(responseSpecies);
+
+        // 名前.
+        const names = responseSpecies.names;
+        const name = names.find((v) => v.language.name == "ja").name;
+
+        this.name = name;
         // this.pokemonImage = response;
     },
   },
