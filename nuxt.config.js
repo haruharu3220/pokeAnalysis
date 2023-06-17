@@ -52,7 +52,11 @@ export default {
     // https://go.nuxtjs.dev/emotion
     "@nuxtjs/emotion",
   ],
-
+  routeRules: {
+    "/examples/*": { redirect: "/redirect-route" },
+    "/modify-headers-route": { headers: { "x-magic-of": "nuxt and vercel" } },
+    "/spa": { ssr: false },
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 };
